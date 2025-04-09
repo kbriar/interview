@@ -1,0 +1,739 @@
+Great! Here's a comprehensive list of easy to medium-difficulty interview questions across all the categories you mentioned, designed to test candidates’ mid to deep understanding:
+
+
+---
+
+1. Statistics (Probability Distributions, CLT, Hypothesis Testing)
+
+1. Explain the Central Limit Theorem and give a practical example where it's applicable.
+
+
+2. What’s the difference between a t-distribution and a normal distribution? When would you prefer one over the other?
+
+
+3. How would you test if a sample comes from a specific distribution? Mention the steps and the test used.
+
+
+4. You observe a dataset with a binary outcome and a categorical variable. How would you test for association?
+
+
+5. How do Type I and Type II errors relate to confidence levels and power in hypothesis testing?
+
+
+6. What’s a p-value? Why might a very low p-value still not imply practical significance?
+
+
+7. Describe the assumptions behind a z-test and a t-test. When are those violated?
+
+
+8. Explain the relationship between variance and the shape of a probability distribution.
+
+
+9. Describe the law of large numbers and how it differs from the central limit theorem.
+
+
+10. If you have a biased coin, how would you design an experiment to estimate the probability of heads?
+
+
+
+
+---
+
+2. Linear Regression
+
+1. What are the assumptions behind linear regression, and how do you check for violations?
+
+
+2. When would you consider using Ridge or Lasso regression instead of OLS?
+
+
+3. How do you interpret a model with no intercept? Give a use-case where it makes sense.
+
+
+4. You have a model with high R² but poor real-world performance. What might be the reason?
+
+
+5. Explain the role of p-values in linear regression coefficients.
+
+
+6. What’s multicollinearity? How do you detect and address it?
+
+
+7. How would you explain the difference between MSE, RMSE, MAE, and when to use each?
+
+
+
+
+---
+
+3. Logistic Regression, Confusion Matrix, Evaluation
+
+1. How do you interpret the coefficients in a logistic regression model?
+
+
+2. Explain the use of the confusion matrix and derive Precision, Recall, and F1-score.
+
+
+3. What are ROC and AUC? Why are they preferred in some imbalanced cases?
+
+
+4. Suppose your model gives 95% accuracy on a dataset with 95% negatives. What’s wrong?
+
+
+5. How does threshold tuning affect Precision and Recall trade-off?
+
+
+6. Can logistic regression model non-linear boundaries? If not, how would you adjust it?
+
+
+7. How would you handle a situation where logistic regression shows poor performance?
+
+
+
+
+---
+
+4. Tree-Based Models (RF, XGBoost, Hyperparameter Tuning)
+
+1. Compare Random Forest and XGBoost in terms of model building and performance.
+
+
+2. Explain the role of max_depth, min_samples_split, and n_estimators in RF.
+
+
+3. What is the purpose of learning_rate in boosting algorithms?
+
+
+4. How does feature importance differ between Gini and Entropy criteria?
+
+
+5. What is overfitting in tree-based models and how would you mitigate it?
+
+
+6. What’s the difference between bagging and boosting in simple terms?
+
+
+7. How does XGBoost handle missing values differently from other models?
+
+
+
+
+---
+
+5. EDA, Feature Engineering, Missing Values, Outliers
+
+1. What are different methods to detect outliers? How do you decide which to remove?
+
+
+2. Describe how you would impute missing values for different types of features.
+
+
+3. When would you prefer label encoding over one-hot encoding?
+
+
+4. How do you handle skewed numerical features before modeling?
+
+
+5. What visualizations would you use for detecting correlations and multicollinearity?
+
+
+6. Explain variance thresholding and mutual information-based feature selection.
+
+
+7. How would you approach feature scaling for tree-based models vs linear models?
+
+
+
+
+---
+
+6. Basic Neural Networks
+
+1. Explain forward and backward propagation in neural networks.
+
+
+2. Why is ReLU preferred over sigmoid or tanh in hidden layers?
+
+
+3. What is the vanishing gradient problem and how does it affect learning?
+
+
+4. Describe how batch size and learning rate affect convergence.
+
+
+5. What is dropout and how does it prevent overfitting?
+
+
+6. How do you decide the number of hidden layers and units?
+
+
+7. Explain weight initialization and its importance in training neural networks.
+
+
+
+
+---
+
+7. Python Programming
+
+1. What's the difference between a shallow and a deep copy in Python?
+
+
+2. How does list comprehension differ from map and filter functions?
+
+
+3. What’s the difference between is and ==?
+
+
+4. How do you handle memory inefficiency when working with large datasets in Pandas?
+
+
+5. What are decorators in Python? Give a real-world example.
+
+
+6. Explain the usage of generators and their advantages.
+
+
+7. What are some common pitfalls when using mutable default arguments in functions?
+
+
+
+
+---
+
+8. LLMs and Agent AI (Basics)
+
+1. What is the difference between a language model and an agent?
+
+
+2. How do transformers improve upon traditional RNN/LSTM architectures?
+
+
+3. What is prompt engineering and why is it crucial for LLMs?
+
+
+4. What are the key limitations of LLMs like GPT or Claude in real-world use?
+
+
+5. How do retrieval-augmented generation (RAG) models work?
+
+
+6. How can LLMs be fine-tuned for task-specific use cases?
+
+
+7. What are the safety and bias considerations in deploying LLM agents?
+
+
+
+
+---
+
+9. Linear and Integer Programming
+
+1. Formulate a linear program to optimize a product mix with limited resources and demand constraints.
+
+
+2. What's the difference between linear programming and integer programming? Why is IP harder?
+
+
+3. How would you model a constraint like “select exactly 2 out of 5 variables”?
+
+
+4. Describe a scenario where LP relaxation of an integer program still gives a valid solution.
+
+
+5. Explain slack, surplus, and shadow prices in LP context.
+
+
+6. How do you handle mutually exclusive decision variables in ILP?
+
+
+7. Suppose a factory must minimize cost but can’t run machine A and B simultaneously. How do you formulate this?
+
+
+
+
+
+
+
+
+Mid to Deep-Level Interview Questions with Answers
+
+
+---
+
+1. Statistics: Probability Distributions, CLT, Hypothesis Testing
+
+1. Explain the Central Limit Theorem (CLT) and give a practical example.
+
+Answer: CLT states that the sampling distribution of the sample mean will approximate a normal distribution as the sample size becomes large, regardless of the original distribution's shape. For example, if we take repeated samples of average daily sales across 30 stores, their average will tend to be normally distributed.
+
+
+
+2. Difference between t-distribution and normal distribution?
+
+Answer: t-distribution has heavier tails and is used when sample size is small or variance is unknown. It converges to normal as sample size increases.
+
+
+
+3. How to test if a sample follows a specific distribution?
+
+Answer: Use goodness-of-fit tests like the Chi-square test or the Kolmogorov-Smirnov test.
+
+
+
+4. Binary outcome vs categorical variable - test for association?
+
+Answer: Use Chi-square test of independence.
+
+
+
+5. Difference between Type I and Type II errors?
+
+Answer: Type I error: false positive (rejecting a true null), Type II error: false negative (failing to reject a false null).
+
+
+
+6. What is a p-value?
+
+Answer: Probability of observing a result at least as extreme as the one obtained, assuming the null hypothesis is true. A low p-value suggests evidence against the null.
+
+
+
+7. Z-test vs T-test assumptions?
+
+Answer: Z-test assumes known variance and large samples; T-test assumes unknown variance and smaller sample size.
+
+
+
+8. Variance vs shape of distribution?
+
+Answer: Higher variance leads to wider spread; low variance leads to peaked distribution.
+
+
+
+9. Law of Large Numbers vs CLT?
+
+Answer: LLN says the sample mean converges to the population mean with more samples. CLT says the distribution of sample means becomes normal.
+
+
+
+10. Biased coin experiment?
+
+Answer: Toss the coin multiple times, record proportion of heads, and use binomial distribution or estimate confidence intervals.
+
+
+
+
+
+---
+
+2. Linear Regression
+
+1. Assumptions of linear regression?
+
+Answer: Linearity, independence, homoscedasticity, normality of residuals, no multicollinearity.
+
+
+
+2. When Ridge or Lasso?
+
+Answer: Use Ridge when all features are useful and you want to penalize large coefficients. Use Lasso for feature selection as it can zero out coefficients.
+
+
+
+3. No intercept scenario?
+
+Answer: When you know the relationship passes through the origin (e.g., zero input yields zero output).
+
+
+
+4. High R^2 but poor performance?
+
+Answer: Likely overfitting; high training performance doesn’t generalize to test data.
+
+
+
+5. Role of p-values?
+
+Answer: Tests if coefficients are significantly different from zero.
+
+
+
+6. What is multicollinearity?
+
+Answer: When predictors are highly correlated; detect using VIF and address with regularization or removing variables.
+
+
+
+7. MSE, RMSE, MAE?
+
+Answer: MSE penalizes larger errors, RMSE is in the same unit as output, MAE is more robust to outliers.
+
+
+
+
+
+---
+
+3. Logistic Regression & Evaluation Metrics
+
+1. Interpreting coefficients in logistic regression?
+
+Answer: Log-odds change for a unit increase in the predictor. Exp(coef) gives odds ratio.
+
+
+
+2. Confusion matrix metrics?
+
+Answer: Accuracy, Precision (TP / TP+FP), Recall (TP / TP+FN), F1-score (harmonic mean).
+
+
+
+3. ROC and AUC?
+
+Answer: ROC plots TPR vs FPR. AUC is area under the curve; higher AUC implies better model.
+
+
+
+4. High accuracy with imbalanced data?
+
+Answer: Accuracy can be misleading; use Precision, Recall, or AUC.
+
+
+
+5. Threshold tuning?
+
+Answer: Lowering threshold increases recall, raising it increases precision. Choose based on business need.
+
+
+
+6. Can logistic model non-linearities?
+
+Answer: Not directly, but you can add interaction or polynomial terms.
+
+
+
+7. Logistic regression performance low?
+
+Answer: Try feature engineering, more expressive models (trees, ensembles), or handling imbalance.
+
+
+
+
+
+---
+
+4. Tree-Based Models
+
+1. RF vs XGBoost?
+
+Answer: RF builds trees in parallel, XGBoost sequentially boosts trees. XGBoost usually performs better but is more complex.
+
+
+
+2. Hyperparameters in RF?
+
+Answer: max_depth controls tree size, n_estimators controls number of trees, min_samples_split controls node splits.
+
+
+
+3. Learning rate in boosting?
+
+Answer: Controls contribution of each tree. Low values need more trees but prevent overfitting.
+
+
+
+4. Feature importance metrics?
+
+Answer: Gini and entropy both split data; Gini is faster, entropy more informative.
+
+
+
+5. Preventing overfitting in trees?
+
+Answer: Limit depth, use pruning, minimum samples per leaf, or regularization.
+
+
+
+6. Bagging vs Boosting?
+
+Answer: Bagging averages many independent models (RF), boosting corrects previous errors iteratively (XGBoost).
+
+
+
+7. XGBoost and missing values?
+
+Answer: XGBoost learns the best direction to handle missing values in splits.
+
+
+
+
+
+---
+
+5. EDA, Feature Engineering
+
+1. Detecting outliers?
+
+Answer: Z-score, IQR method, visual plots (boxplot), isolation forest.
+
+
+
+2. Imputing missing values?
+
+Answer: Mean/median for numerical, mode for categorical, KNN or model-based imputation.
+
+
+
+3. Label vs One-Hot Encoding?
+
+Answer: Label for ordinal data; One-hot for nominal variables.
+
+
+
+4. Handling skewed features?
+
+Answer: Log, square-root, or Box-Cox transformations.
+
+
+
+5. Visualizing correlation?
+
+Answer: Correlation matrix heatmap, pairplots.
+
+
+
+6. Feature selection methods?
+
+Answer: Filter (corr, chi2), wrapper (RFE), embedded (Lasso, tree importances).
+
+
+
+7. Scaling in trees vs linear models?
+
+Answer: Tree-based models don’t require scaling; linear models do.
+
+
+
+
+
+---
+
+6. Neural Networks
+
+1. Forward/backward propagation?
+
+Answer: Forward: input to output; backward: gradients via chain rule to update weights.
+
+
+
+2. ReLU vs sigmoid/tanh?
+
+Answer: ReLU avoids vanishing gradients and is faster to compute.
+
+
+
+3. Vanishing gradient problem?
+
+Answer: Gradients shrink in deep networks, stalling learning. Mitigate via ReLU, BatchNorm.
+
+
+
+4. Batch size and learning rate?
+
+Answer: Large batch = stable but slow; small batch = noisy but faster. LR affects step size.
+
+
+
+5. What is dropout?
+
+Answer: Randomly drops units to prevent co-adaptation and overfitting.
+
+
+
+6. Choosing hidden layers/units?
+
+Answer: Trial and error, cross-validation, or heuristics (e.g., input + output nodes / 2).
+
+
+
+7. Weight initialization?
+
+Answer: Xavier or He initialization help maintain gradient flow.
+
+
+
+
+
+---
+
+7. Python Programming
+
+1. Shallow vs Deep Copy?
+
+Answer: Shallow copies reference inner objects; deep copies clone everything.
+
+
+
+2. List comprehension vs map/filter?
+
+Answer: List comprehensions are more readable; map/filter are functional.
+
+
+
+3. is vs ==?
+
+Answer: is compares identity, == compares values.
+
+
+
+4. Memory inefficiency in Pandas?
+
+Answer: Use category dtype, drop unused columns, use df.astype().
+
+
+
+5. Decorators?
+
+Answer: Functions that modify other functions. Example: logging, access control.
+
+
+
+6. Generators?
+
+Answer: Yield values lazily, saving memory (e.g., reading large files).
+
+
+
+7. Mutable default arguments?
+
+Answer: Can lead to bugs due to shared state. Use None and initialize inside.
+
+
+
+
+
+---
+
+8. LLMs / Agent AI
+
+1. Language model vs Agent?
+
+Answer: LM generates text; agent can act in an environment using tools, memory.
+
+
+
+2. Transformers vs RNNs?
+
+Answer: Transformers use attention, faster to train, better for long sequences.
+
+
+
+3. Prompt engineering?
+
+Answer: Crafting inputs to guide model behavior effectively.
+
+
+
+4. Limitations of LLMs?
+
+Answer: Hallucination, context window, biases, lack of real reasoning.
+
+
+
+5. RAG models?
+
+Answer: Combine LLMs with retrieval (e.g., search index) to ground outputs.
+
+
+
+6. Fine-tuning LLMs?
+
+Answer: Adjust model weights on domain-specific data.
+
+
+
+7. Safety and bias concerns?
+
+Answer: Mitigate with RLHF, content filtering, fairness audits.
+
+
+
+
+
+---
+
+9. Linear & Integer Programming (with detailed scenarios)
+
+1. Scenario: Optimize product mix under limited raw material constraints
+
+Answer: Maximize profit = c1x1 + c2x2; subject to: a1x1 + a2x2 <= resource, x1, x2 >= 0
+
+
+
+2. Binary variable scenario: Project selection
+
+Answer: xi ∈ {0,1}; choose up to 3 of 5 projects, maximize total return.
+
+
+
+3. Mutually exclusive constraint?
+
+Answer: x1 + x2 <= 1
+
+
+
+4. Minimum staffing with skill requirement?
+
+Answer: Minimize cost; constraints: total hours per skill >= required.
+
+
+
+5. LP relaxation providing integer solution?
+
+Answer: In some structured problems (e.g., matching), LP solution is already integral.
+
+
+
+6. Shadow price interpretation?
+
+Answer: Increase in objective value per unit increase in resource.
+
+
+
+7. Formulating time scheduling LP?
+
+Answer: Minimize total shifts, subject to availability and hour constraints per worker.
+
+
+
+8. Multi-period capacity planning?
+
+Answer: Integer constraints on machines; link constraints across periods.
+
+
+
+9. Facility location problem
+
+Answer: Minimize total fixed + variable cost. Use binary for facility open decision.
+
+
+
+
+Let me know if you'd like a rubric or evaluation checklist.
+
+
+
+
+
+
+
+
+
+
+
+---
+
+Let me know if you want these grouped into a formatted doc or paired with sample answers or rubrics.
+
