@@ -1,0 +1,518 @@
+Mid to Deep-Level Interview Questions with Answers – Set 2
+Mid to Deep-Level Interview Questions with Answers – Set 2
+
+
+---
+
+(Previously Updated Sections)
+
+(Sections 1 to 4 already updated in prior response.)
+
+
+---
+
+5. EDA, Missing Data, Feature Selection
+
+1. You have a numeric column with 30% missing values. What are your options for handling this situation and how would you choose between them?
+
+Answer: Drop column, impute with model, KNN, mean/median or use missing indicator.
+
+
+
+2. What is the difference between correlation and causation, and how can you distinguish between them during EDA?
+
+Answer: Use domain knowledge, experiments, or DAG-based methods.
+
+
+
+3. What is target leakage in a dataset, and how can it affect model performance?
+
+Answer: Using future or unavailable information in training; leads to over-optimistic results.
+
+
+
+4. How would you handle categorical variables that have high cardinality?
+
+Answer: Use target encoding, hashing, embedding.
+
+
+
+5. What is feature interaction, and how do you create and evaluate interactions during feature engineering?
+
+Answer: Use if domain suggests interactions or use automatic techniques (e.g., tree models).
+
+
+
+6. Why is it important to scale features before applying PCA, and what happens if you don’t?
+
+Answer: PCA is sensitive to feature scales; unscaled features distort variance captured.
+
+
+
+7. How can you assess the importance of features when working with a black-box model?
+
+Answer: Use permutation importance, SHAP values, or partial dependence plots.
+
+
+
+
+
+---
+
+6. Neural Networks
+
+1. What is batch normalization in neural networks, and how does it improve training?
+
+Answer: Normalizes layer input to stabilize learning and reduce internal covariate shift.
+
+
+
+2. Why are Convolutional Neural Networks (CNNs) particularly effective for image data?
+
+Answer: Use local filters and parameter sharing; efficient in learning spatial hierarchies.
+
+
+
+3. Your neural network model isn’t converging during training. What are the common issues you would check for?
+
+Answer: Check learning rate, initialization, batch size, data quality.
+
+
+
+4. What are the most common techniques to prevent overfitting in deep neural networks?
+
+Answer: Dropout, regularization (L2), early stopping, data augmentation.
+
+
+
+5. What is a loss function in neural networks? Provide examples for classification and regression tasks.
+
+Answer: Guides learning; MSE for regression, cross-entropy for classification.
+
+
+
+6. In what scenarios would you use a sigmoid activation function in the output layer of a neural network?
+
+Answer: Binary classification to output probability between 0 and 1.
+
+
+
+7. How do Recurrent Neural Networks (RNNs) differ from feedforward neural networks, and what type of problems are they suited for?
+
+Answer: RNNs have temporal memory; suitable for sequence data.
+
+
+
+
+
+---
+
+7. Python Programming
+
+1. What is a lambda function in Python, and when would you use one? Provide an example.
+
+Answer: Anonymous function: lambda x: x+1
+
+
+
+2. **Explain the use of *args and kwargs in function definitions.
+
+Answer: *args = variable positional args; **kwargs = variable keyword args.
+
+
+
+3. What are generators in Python, and how do they differ from regular functions?
+
+Answer: Iterating over large datasets without loading all into memory.
+
+
+
+4. What is the Global Interpreter Lock (GIL) in Python and what implications does it have for multithreading?
+
+Answer: GIL prevents multiple threads from executing Python bytecode concurrently.
+
+
+
+5. What is the difference between @classmethod and @staticmethod in Python classes?
+
+Answer: classmethod gets class as first arg; staticmethod is regular function in a class.
+
+
+
+6. How do you implement memoization in Python and why is it useful?
+
+Answer: Using functools.lru_cache.
+
+
+
+7. What is a context manager in Python and give a common use case?
+
+Answer: Manages resources using with statement (e.g., file handling).
+
+
+
+
+
+---
+
+8. LLMs and Agent AI
+
+1. What is an embedding in the context of LLMs and how is it used?
+
+Answer: Numeric vector representing semantic meaning of tokens.
+
+
+
+2. Compare GPT and BERT architectures. How do their training approaches differ?
+
+Answer: GPT is generative and autoregressive; BERT is encoder-based and bidirectional.
+
+
+
+3. Suppose an LLM is returning factually incorrect answers. What are the strategies to mitigate this issue?
+
+Answer: Use retrieval-augmented generation (RAG), fine-tuning, or human-in-the-loop.
+
+
+
+4. What is LangChain and how does it facilitate building AI agents?
+
+Answer: Framework for building LLM-powered agents using chains, tools, memory.
+
+
+
+5. What is the difference between zero-shot and few-shot prompting in LLMs?
+
+Answer: Few-shot gives examples in prompt; zero-shot gives only task description.
+
+
+
+6. What role does a vector store play in LLM-based agent systems?
+
+Answer: Stores embeddings for fast similarity search.
+
+
+
+7. How do you evaluate the performance of an LLM-generated output?
+
+Answer: Use BLEU, ROUGE, human evals, or task-specific metrics.
+
+
+
+
+
+---
+
+9. Linear/Integer Programming – More Scenarios
+
+1. How would you formulate a vehicle routing problem with constraints on delivery truck capacity and delivery time windows?
+
+Answer: Vehicle Routing Problem (VRP) modeled as ILP; objective = minimize distance; constraints = capacity, time windows.
+
+
+
+2. You are managing a project plan with task dependencies and limited labor resources. How would you formulate this using integer programming?
+
+Answer: Use binary variables for task inclusion; constraints link dependencies; objective = minimize total labor or time.
+
+
+
+3. How do you formulate a shift scheduling problem for a workforce under labor laws and cost constraints?
+
+Answer: Integer variables for worker-hour allocation; minimize cost; constraints = coverage per shift, max hours.
+
+
+
+4. Describe the integer programming formulation for deciding which facilities to open while satisfying customer demand at minimum cost.
+
+Answer: Binary variable for facility open/closed; minimize cost; constraints on capacity meeting demand.
+
+
+
+5. How would you build a linear programming model to optimize a portfolio with return and risk constraints?
+
+Answer: Objective: maximize return; constraints: budget, max risk (variance), weights in [0,1].
+
+
+
+6. What is the cutting stock problem and how is it modeled as an optimization problem?
+
+Answer: Minimize number of raw materials used; integer cuts satisfying customer sizes.
+
+
+
+7. Describe how to model an airline crew scheduling problem using integer programming.
+
+Answer: Allocate crew to flights; minimize cost; constraints: rest, legality, coverage.
+
+
+
+
+
+---
+
+Let me know if you want this content exported or formatted into a presentation or candidate evaluation rubric.
+
+
+
+Another complete set of questions and answers has been compiled in "Interview Questions Answers Set2" in the side panel, with more detailed scenarios especially in the linear/integer programming section.
+
+Would you like a third set or a scoring rubric for evaluating candidates based on these responses?
+
+
+
+---
+
+(Previously Updated Sections)
+
+(Sections 1 to 4 already updated in prior response.)
+
+
+---
+
+5. EDA, Missing Data, Feature Selection
+
+1. You have a numeric column with 30% missing values. What are your options for handling this situation and how would you choose between them?
+
+Answer: Drop column, impute with model, KNN, mean/median or use missing indicator.
+
+
+
+2. What is the difference between correlation and causation, and how can you distinguish between them during EDA?
+
+Answer: Use domain knowledge, experiments, or DAG-based methods.
+
+
+
+3. What is target leakage in a dataset, and how can it affect model performance?
+
+Answer: Using future or unavailable information in training; leads to over-optimistic results.
+
+
+
+4. How would you handle categorical variables that have high cardinality?
+
+Answer: Use target encoding, hashing, embedding.
+
+
+
+5. What is feature interaction, and how do you create and evaluate interactions during feature engineering?
+
+Answer: Use if domain suggests interactions or use automatic techniques (e.g., tree models).
+
+
+
+6. Why is it important to scale features before applying PCA, and what happens if you don’t?
+
+Answer: PCA is sensitive to feature scales; unscaled features distort variance captured.
+
+
+
+7. How can you assess the importance of features when working with a black-box model?
+
+Answer: Use permutation importance, SHAP values, or partial dependence plots.
+
+
+
+
+
+---
+
+6. Neural Networks
+
+1. What is batch normalization in neural networks, and how does it improve training?
+
+Answer: Normalizes layer input to stabilize learning and reduce internal covariate shift.
+
+
+
+2. Why are Convolutional Neural Networks (CNNs) particularly effective for image data?
+
+Answer: Use local filters and parameter sharing; efficient in learning spatial hierarchies.
+
+
+
+3. Your neural network model isn’t converging during training. What are the common issues you would check for?
+
+Answer: Check learning rate, initialization, batch size, data quality.
+
+
+
+4. What are the most common techniques to prevent overfitting in deep neural networks?
+
+Answer: Dropout, regularization (L2), early stopping, data augmentation.
+
+
+
+5. What is a loss function in neural networks? Provide examples for classification and regression tasks.
+
+Answer: Guides learning; MSE for regression, cross-entropy for classification.
+
+
+
+6. In what scenarios would you use a sigmoid activation function in the output layer of a neural network?
+
+Answer: Binary classification to output probability between 0 and 1.
+
+
+
+7. How do Recurrent Neural Networks (RNNs) differ from feedforward neural networks, and what type of problems are they suited for?
+
+Answer: RNNs have temporal memory; suitable for sequence data.
+
+
+
+
+
+---
+
+7. Python Programming
+
+1. What is a lambda function in Python, and when would you use one? Provide an example.
+
+Answer: Anonymous function: lambda x: x+1
+
+
+
+2. **Explain the use of *args and kwargs in function definitions.
+
+Answer: *args = variable positional args; **kwargs = variable keyword args.
+
+
+
+3. What are generators in Python, and how do they differ from regular functions?
+
+Answer: Iterating over large datasets without loading all into memory.
+
+
+
+4. What is the Global Interpreter Lock (GIL) in Python and what implications does it have for multithreading?
+
+Answer: GIL prevents multiple threads from executing Python bytecode concurrently.
+
+
+
+5. What is the difference between @classmethod and @staticmethod in Python classes?
+
+Answer: classmethod gets class as first arg; staticmethod is regular function in a class.
+
+
+
+6. How do you implement memoization in Python and why is it useful?
+
+Answer: Using functools.lru_cache.
+
+
+
+7. What is a context manager in Python and give a common use case?
+
+Answer: Manages resources using with statement (e.g., file handling).
+
+
+
+
+
+---
+
+8. LLMs and Agent AI
+
+1. What is an embedding in the context of LLMs and how is it used?
+
+Answer: Numeric vector representing semantic meaning of tokens.
+
+
+
+2. Compare GPT and BERT architectures. How do their training approaches differ?
+
+Answer: GPT is generative and autoregressive; BERT is encoder-based and bidirectional.
+
+
+
+3. Suppose an LLM is returning factually incorrect answers. What are the strategies to mitigate this issue?
+
+Answer: Use retrieval-augmented generation (RAG), fine-tuning, or human-in-the-loop.
+
+
+
+4. What is LangChain and how does it facilitate building AI agents?
+
+Answer: Framework for building LLM-powered agents using chains, tools, memory.
+
+
+
+5. What is the difference between zero-shot and few-shot prompting in LLMs?
+
+Answer: Few-shot gives examples in prompt; zero-shot gives only task description.
+
+
+
+6. What role does a vector store play in LLM-based agent systems?
+
+Answer: Stores embeddings for fast similarity search.
+
+
+
+7. How do you evaluate the performance of an LLM-generated output?
+
+Answer: Use BLEU, ROUGE, human evals, or task-specific metrics.
+
+
+
+
+
+---
+
+9. Linear/Integer Programming – More Scenarios
+
+1. How would you formulate a vehicle routing problem with constraints on delivery truck capacity and delivery time windows?
+
+Answer: Vehicle Routing Problem (VRP) modeled as ILP; objective = minimize distance; constraints = capacity, time windows.
+
+
+
+2. You are managing a project plan with task dependencies and limited labor resources. How would you formulate this using integer programming?
+
+Answer: Use binary variables for task inclusion; constraints link dependencies; objective = minimize total labor or time.
+
+
+
+3. How do you formulate a shift scheduling problem for a workforce under labor laws and cost constraints?
+
+Answer: Integer variables for worker-hour allocation; minimize cost; constraints = coverage per shift, max hours.
+
+
+
+4. Describe the integer programming formulation for deciding which facilities to open while satisfying customer demand at minimum cost.
+
+Answer: Binary variable for facility open/closed; minimize cost; constraints on capacity meeting demand.
+
+
+
+5. How would you build a linear programming model to optimize a portfolio with return and risk constraints?
+
+Answer: Objective: maximize return; constraints: budget, max risk (variance), weights in [0,1].
+
+
+
+6. What is the cutting stock problem and how is it modeled as an optimization problem?
+
+Answer: Minimize number of raw materials used; integer cuts satisfying customer sizes.
+
+
+
+7. Describe how to model an airline crew scheduling problem using integer programming.
+
+Answer: Allocate crew to flights; minimize cost; constraints: rest, legality, coverage.
+
+
+
+
+
+---
+
+Let me know if you want this content exported or formatted into a presentation or candidate evaluation rubric.
+
+
+
+The remaining sections have been fully updated with clearly phrased questions. Let me know if you'd like the document exported as a PDF or DOCX, or if you'd like help designing an evaluation rubric or scoring guide based on these questions.
+
