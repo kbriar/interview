@@ -340,7 +340,354 @@ A: Steps:
     Use different tokenization or fine-tune longer.
 
 
+1. TensorFlow
 
+Q1: What is TensorFlow, and how does it work?
+A1: TensorFlow is an open-source deep learning framework developed by Google. It uses computational graphs (where nodes are operations, and edges are tensors) to build and train neural networks efficiently.
+
+Q2: What is a Tensor in TensorFlow?
+A2: A tensor is a multi-dimensional array used as the primary data structure in TensorFlow, representing inputs, outputs, and parameters in a neural network.
+
+Q3: Explain the difference between tf.Session() and tf.function.
+A3: tf.Session() was used in TF 1.x to execute computational graphs, while tf.function in TF 2.x converts Python functions into optimized computation graphs for better performance.
+
+Q4: How do you save and load a TensorFlow model?
+A4:
+python
+Copy
+
+model.save('model.h5')  # Save
+loaded_model = tf.keras.models.load_model('model.h5')  # Load
+
+Q5: What is GradientTape in TensorFlow?
+A5: GradientTape records operations for automatic differentiation, allowing custom training loops by computing gradients manually.
+
+Q6: What is the difference between model.fit() and model.predict()?
+A6: model.fit() trains the model on data, while model.predict() generates predictions for input data.
+
+Q7: How do you use TensorBoard for visualization?
+A7: Use callbacks in model.fit():
+python
+Copy
+
+tensorboard_callback = tf.keras.callbacks.TensorBoard(log_dir='./logs')
+model.fit(..., callbacks=[tensorboard_callback])
+
+Q8: What is a Callback in TensorFlow?
+A8: Callbacks are functions executed during training (e.g., EarlyStopping, ModelCheckpoint) to monitor or modify training behavior.
+
+Q9: How do you implement transfer learning in TensorFlow?
+A9: Use pre-trained models (e.g., ResNet50) and fine-tune them:
+python
+Copy
+
+base_model = tf.keras.applications.ResNet50(weights='imagenet', include_top=False)
+model = tf.keras.Sequential([base_model, tf.keras.layers.Dense(10, activation='softmax')])
+
+Q10: What is XLA in TensorFlow?
+A10: XLA (Accelerated Linear Algebra) is a compiler that optimizes TensorFlow computations for faster execution on hardware (CPU/GPU/TPU).
+2. PyTorch
+
+Q1: What is PyTorch, and how is it different from TensorFlow?
+A1: PyTorch is an open-source deep learning framework with dynamic computation graphs (eager execution), while TensorFlow initially used static graphs (now supports both).
+
+Q2: What is a torch.Tensor?
+A2: A torch.Tensor is a multi-dimensional array similar to NumPy arrays but optimized for GPU acceleration.
+
+Q3: Explain autograd in PyTorch.
+A3: autograd automatically computes gradients for tensor operations, enabling backpropagation in neural networks.
+
+Q4: How do you move a PyTorch model to GPU?
+A4:
+python
+Copy
+
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+model.to(device)
+
+Q5: What is nn.Module in PyTorch?
+A5: nn.Module is the base class for defining custom neural network architectures in PyTorch.
+
+Q6: How do you save and load a PyTorch model?
+A6:
+python
+Copy
+
+torch.save(model.state_dict(), 'model.pth')  # Save
+model.load_state_dict(torch.load('model.pth'))  # Load
+
+Q7: What is a DataLoader in PyTorch?
+A7: DataLoader batches and shuffles datasets for efficient training, working with Dataset classes.
+
+Q8: How do you implement a custom loss function in PyTorch?
+A8:
+python
+Copy
+
+class CustomLoss(nn.Module):
+    def forward(self, y_pred, y_true):
+        return ((y_pred - y_true)**2).mean()
+
+Q9: What is torch.no_grad() used for?
+A9: It disables gradient tracking for inference or evaluation to save memory and computation.
+
+Q10: How does PyTorch handle distributed training?
+A10: Using DistributedDataParallel (DDP) or DataParallel for multi-GPU training.
+3. Hugging Face
+
+Q1: What is Hugging Face, and what are its key libraries?
+A1: Hugging Face provides NLP tools like Transformers, Datasets, and Tokenizers for pre-trained models (BERT, GPT).
+
+Q2: How do you load a pre-trained BERT model?
+A2:
+python
+Copy
+
+from transformers import BertModel
+model = BertModel.from_pretrained('bert-base-uncased')
+
+Q3: What is a pipeline in Hugging Face?
+A3: A high-level API for tasks like text classification, NER:
+python
+Copy
+
+classifier = pipeline('sentiment-analysis')
+
+Q4: How do you fine-tune a Hugging Face model?
+A4: Use Trainer or custom training loops with AutoModelForSequenceClassification.
+
+Q5: What is tokenization in Hugging Face?
+A5: Converting text into input IDs and attention masks using tokenizers like BertTokenizer.
+
+Q6: How do you handle long sequences in Transformers?
+A6: Use truncation, padding, or models with longer context (e.g., Longformer).
+
+Q7: What is AutoModel vs. AutoModelForSequenceClassification?
+A7: AutoModel loads a base model, while AutoModelForSequenceClassification adds a classification head.
+
+Q8: How do you use Hugging Face Datasets?
+A8:
+python
+Copy
+
+from datasets import load_dataset
+dataset = load_dataset('glue', 'mrpc')
+
+Q9: What is model distillation in Hugging Face?
+A9: Training a smaller model (student) to mimic a larger model (teacher) for efficiency.
+
+Q10: How do you deploy a Hugging Face model?
+A10: Use transformers.onnx for ONNX export or Hugging Face’s Inference API.
+4. Deep Learning Fundamentals
+
+Q1: What is backpropagation?
+A1: An algorithm to compute gradients of the loss w.r.t. weights using the chain rule for optimization.
+
+Q2: What is vanishing/exploding gradient?
+A2: Gradients become too small (vanishing) or too large (exploding), hindering training. Solved with ReLU, BatchNorm, or gradient clipping.
+
+Q3: Explain CNNs and their key layers.
+A3: CNNs use convolutional layers (feature extraction), pooling (downsampling), and fully connected layers (classification).
+
+Q4: What is dropout?
+A4: Randomly deactivating neurons during training to prevent overfitting.
+
+Q5: What is batch normalization?
+A5: Normalizing layer inputs to stabilize and accelerate training.
+
+Q6: What is the difference between RNNs and Transformers?
+A6: RNNs process sequences sequentially; Transformers use self-attention for parallel processing.
+
+Q7: What is transfer learning?
+A7: Using pre-trained models (e.g., ResNet, BERT) and fine-tuning them for new tasks.
+
+Q8: What is a GAN?
+A8: Generative Adversarial Networks consist of a generator (creates fake data) and a discriminator (detects fakes).
+
+Q9: What is the difference between SGD and Adam?
+A9: SGD updates weights with a fixed learning rate; Adam adapts rates per parameter.
+
+Q10: What is attention mechanism?
+A10: Weights inputs dynamically to focus on relevant parts (e.g., in Transformers).
+5. Parameter Optimization
+
+Q1: What is learning rate?
+A1: A hyperparameter controlling step size during gradient descent.
+
+Q2: What is momentum in optimization?
+A2: Accumulates past gradients to accelerate convergence (used in SGD with momentum).
+
+Q3: Explain Adam optimizer.
+A3: Combines momentum and adaptive learning rates (uses 1st/2nd moment estimates).
+
+Q4: What is learning rate scheduling?
+A4: Adjusting LR during training (e.g., ReduceLROnPlateau, cosine annealing).
+
+Q5: What is weight decay?
+A5: L2 regularization to penalize large weights.
+
+Q6: What is gradient clipping?
+A6: Limiting gradient values to prevent exploding gradients.
+
+Q7: What is the role of batch size?
+A7: Smaller batches introduce noise (better generalization), larger batches speed up training.
+
+Q8: What is early stopping?
+A8: Halting training when validation performance degrades to avoid overfitting.
+
+Q9: What is the difference between L1 and L2 regularization?
+A9: L1 encourages sparsity, L2 penalizes large weights smoothly.
+
+Q10: How do you choose an optimizer?
+A10: Adam is default, SGD with momentum for better generalization, RMSprop for RNNs.
+6. EDA (Exploratory Data Analysis)
+
+Q1: What is EDA?
+A1: Analyzing datasets to summarize characteristics (statistics, visualizations).
+
+Q2: How do you handle missing values?
+A2: Impute (mean/median) or drop based on data.
+
+Q3: What are outliers, and how do you detect them?
+A3: Extreme values detected via box plots, Z-score, or IQR.
+
+Q4: What is feature correlation?
+A4: Measures linear relationships (Pearson’s r). High correlation may imply redundancy.
+
+Q5: How do you visualize distributions?
+A5: Histograms, KDE plots, Q-Q plots.
+
+Q6: What is the purpose of scatter plots?
+A6: Show relationships between two continuous variables.
+
+Q7: How do you analyze categorical data?
+A7: Count plots, bar charts, chi-square tests.
+
+Q8: What is dimensionality reduction?
+A8: Techniques like PCA/t-SNE to reduce features while preserving information.
+
+Q9: How do you check for class imbalance?
+A9: Class distribution plots; handle with resampling or class weights.
+
+Q10: What is the use of pair plots?
+A10: Visualize pairwise relationships in multivariate data.
+7. ML Algorithms
+
+Q1: What is logistic regression?
+A1: A classification algorithm using sigmoid to predict probabilities.
+
+Q2: Explain SVM.
+A2: Finds the optimal hyperplane maximizing margin between classes.
+
+Q3: What is k-NN?
+A3: Classifies based on majority vote of k-nearest neighbors.
+
+Q4: How does Naive Bayes work?
+A4: Applies Bayes’ theorem with feature independence assumption.
+
+Q5: What is the bias-variance tradeoff?
+A5: High bias (underfitting) vs. high variance (overfitting).
+
+Q6: What is regularization in ML?
+A6: Penalizing complexity (L1/L2) to prevent overfitting.
+
+Q7: What is cross-validation?
+A7: Splitting data into folds to evaluate model robustness.
+
+Q8: What is precision vs. recall?
+A8: Precision = TP/(TP+FP), Recall = TP/(TP+FN).
+
+Q9: What is ROC-AUC?
+A9: Measures classifier performance across thresholds (AUC = 1 is perfect).
+
+Q10: What is ensemble learning?
+A10: Combines multiple models (bagging, boosting) for better performance.
+8. Tree-Based Models
+
+Q1: How does a decision tree work?
+A1: Splits data recursively based on feature thresholds (maximizing information gain).
+
+Q2: What is random forest?
+A2: Ensemble of decision trees with bagging and feature randomness.
+
+Q3: What is Gini impurity?
+A3: Measures node purity in decision trees (0 = perfect split).
+
+Q4: How does XGBoost work?
+A4: Boosting with gradient descent, regularization, and parallel tree building.
+
+Q5: What is LightGBM?
+A5: Gradient boosting with leaf-wise growth and histogram-based splits.
+
+Q6: What is CatBoost?
+A6: Handles categorical features natively with ordered boosting.
+
+Q7: How do you prevent overfitting in trees?
+A7: Pruning, max_depth, min_samples_split, or regularization in boosting.
+
+Q8: What is feature importance in trees?
+A8: Measures contribution of features to splits (Gini/permutation importance).
+
+Q9: Compare bagging vs. boosting.
+A9: Bagging trains models in parallel (RF), boosting sequentially (XGBoost).
+
+Q10: What are the pros of tree models?
+A10: Handle non-linearity, feature importance, no need for scaling.
+9. Clustering
+
+Q1: What is k-means clustering?
+A1: Partitions data into k clusters by minimizing within-cluster variance.
+
+Q2: How do you choose k in k-means?
+A2: Elbow method (inertia vs. k) or silhouette score.
+
+Q3: What is hierarchical clustering?
+A3: Builds a tree of clusters (agglomerative or divisive).
+
+Q4: What is DBSCAN?
+A4: Density-based clustering separating core, border, and noise points.
+
+Q5: What is silhouette score?
+A5: Measures cluster cohesion/separation (range: -1 to 1).
+
+Q6: What is Gaussian Mixture Model (GMM)?
+A6: Probabilistic clustering assuming data is from Gaussian distributions.
+
+Q7: How does PCA help in clustering?
+A7: Reduces dimensions to improve clustering efficiency.
+
+Q8: What is t-SNE?
+A8: Non-linear dimensionality reduction for visualization.
+
+Q9: Compare k-means vs. DBSCAN.
+A9: k-means needs fixed k; DBSCAN handles noise and arbitrary shapes.
+
+Q10: What are clustering applications?
+A10: Customer segmentation, anomaly detection, image compression.
+10. Scenario-Based Questions (Deep Learning)
+
+Scenario 1:
+Q: You’re training a CNN for image classification, but validation accuracy fluctuates wildly. What could be the issue, and how would you fix it?
+A: Possible causes:
+
+    High learning rate → Reduce LR or use scheduling.
+
+    Small batch size → Increase batch size.
+
+    Data inconsistency → Check data augmentation or label noise.
+    Solution: Use learning rate scheduling, gradient clipping, and more data augmentation.
+
+Scenario 2:
+Q: Your NLP model (BERT) performs well on training data but poorly on test data. How do you debug?
+A: Steps:
+
+    Check for data leakage (e.g., test data in training).
+
+    Evaluate on a validation set during training (early stopping).
+
+    Reduce model complexity or increase dropout.
+
+    Use different tokenization or fine-tune longer.
 
 
 
