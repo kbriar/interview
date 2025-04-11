@@ -316,5 +316,53 @@ It applies Bayes' theorem with the assumption of feature independence, calculati
 10. What is the role of feature scaling in machine learning?
 Feature scaling ensures that features contribute equally to the result, especially important for algorithms that compute distances.
 
+Scenario 1:
+Q: You’re training a CNN for image classification, but validation accuracy fluctuates wildly. What could be the issue, and how would you fix it?
+A: Possible causes:
+
+    High learning rate → Reduce LR or use scheduling.
+
+    Small batch size → Increase batch size.
+
+    Data inconsistency → Check data augmentation or label noise.
+    Solution: Use learning rate scheduling, gradient clipping, and more data augmentation.
+
+Scenario 2:
+Q: Your NLP model (BERT) performs well on training data but poorly on test data. How do you debug?
+A: Steps:
+
+    Check for data leakage (e.g., test data in training).
+
+    Evaluate on a validation set during training (early stopping).
+
+    Reduce model complexity or increase dropout.
+
+    Use different tokenization or fine-tune longer.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 *Note: Detailed Q&A sets for Deep Learning, Parameter Optimizations, EDA, ML Algorithms, Tree-Based Models, Clusterings, and scenario-based Deep Learning questions would similarly be comprehensive and structured.*
 
